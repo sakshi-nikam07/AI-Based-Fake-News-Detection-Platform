@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fake News Detector</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <header>
+      <div class="logo">🛡️ <span>Fake News Detector</span></div>
+      <p class="tagline">Paste a headline or article below and let the AI model analyze it.</p>
+    </header>
+
+    <main>
+      <section class="input-card">
+        <textarea id="newsInput" placeholder="Paste a news headline or article text here..."></textarea>
+        <div class="controls">
+          <span id="charCount">0 characters</span>
+          <div>
+            <button id="sampleRealBtn" class="ghost-btn">Try real sample</button>
+            <button id="sampleFakeBtn" class="ghost-btn">Try fake sample</button>
+            <button id="analyzeBtn">Analyze</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="resultCard" class="result-card hidden">
+        <div class="result-header">
+          <div id="verdictBadge" class="badge"></div>
+          <div id="confidenceText" class="confidence"></div>
+        </div>
+
+        <div class="bar-wrap">
+          <div class="bar-label"><span>REAL</span><span>FAKE</span></div>
+          <div class="bar-track">
+            <div id="barFake" class="bar-fake"></div>
+          </div>
+        </div>
+
+        <div id="flagsWrap" class="flags-wrap">
+          <h3>Signals noticed</h3>
+          <ul id="flagsList"></ul>
+        </div>
+
+        <p class="disclaimer">
+          ⚠️ This tool gives a probabilistic estimate from a machine learning model trained on a demo dataset.
+          It is not a fact-checking authority — always verify important claims with trusted, independent sources.
+        </p>
+      </section>
+
+      <section id="errorCard" class="error-card hidden"></section>
+    </main>
+
+    <footer>
+      <p>AI-Based Fake News Detection Platform &middot; TF-IDF + Logistic Regression &middot; Flask backend</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
